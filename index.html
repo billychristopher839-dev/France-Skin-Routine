@@ -1699,7 +1699,15 @@ function renderOnboarding() {
      ".read": "$uid === auth.uid", ".write": "$uid === auth.uid" } } } }
 ------------------------------------------------------------------------------ */
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const FIREBASE_CONFIG = {
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
   apiKey: "AIzaSyA8a7r2YNQwKSuWtR-pQGD2-SVeI5BdGu0",
   authDomain: "french-cad04.firebaseapp.com",
   databaseURL: "https://french-cad04-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -1710,6 +1718,9 @@ const FIREBASE_CONFIG = {
   measurementId: "G-HC8SQCFSS4"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const CloudSync = (function () {
   const SDK = 'https://www.gstatic.com/firebasejs/10.14.1/';
   const PATH_KEY = 'fr_pres_v1';
